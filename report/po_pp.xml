@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+    <report
+        id="po_pp"
+        model="purchase.order"
+        string="PO Prima Print"
+        report_type="qweb-pdf"
+        name="po_report.qweb_po_pp"
+        file="po_report.qweb_po_pp"
+        attachment_use="True"
+        attachment="(object.state in ('draft', 'sent') and 'Quotation - %s' % (object.name)) or 'Order - %s' % (object.name)"
+    />
+
+        <!-- attachment_use="True"
+        attachment="('purchase_order_pp_'+(object.name or '').replace('/','')+'.pdf')" -->
+
+    
+</odoo> 
+
